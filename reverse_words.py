@@ -1,9 +1,3 @@
-'''
-reverse the words in the string
-count white spaces
-return the string to in the same order with newly reversed words
-'''
-
 def reverse_words(text):
     reversedText = text.split(" ")
     reverseList = []
