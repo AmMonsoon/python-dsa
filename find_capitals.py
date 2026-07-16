@@ -1,7 +1,6 @@
 def find_capitals(word):
     indexes = []
-    letterList = list(word)
-    for index, letter in enumerate(letterList):
+    for index, letter in enumerate(word):
         if letter == letter.upper():
             indexes.append(index)
     return indexes
