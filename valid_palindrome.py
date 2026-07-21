@@ -68,20 +68,17 @@ not a `for` loop.
 """
 
 def isPalindrome(s):
-    stringList = s.replace(",", "").replace(":", "").replace(" ", "")
-    lowerString = stringList.lower()
+    lowerString = "".join(letter for letter in s if letter.isalnum()).lower()
+    
     left = 0
     right = len(lowerString) - 1
 
-    for letter in lowerString:
+    while left < right:
         if lowerString[left] != lowerString[right]:
             return False
         left += 1
         right -= 1 
     return True
-
-
-
 
 
 
