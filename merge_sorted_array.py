@@ -1,3 +1,8 @@
+"""
+Time Complexity: O(m + n)
+Space Complexity: O(1)
+"""
+
 def merge(nums1, m, nums2, n):
     i = m - 1
     j = n - 1
@@ -12,7 +17,6 @@ def merge(nums1, m, nums2, n):
             nums1[k] = nums1[i]
             i -= 1
         k -= 1
-
 
     return nums1
 
