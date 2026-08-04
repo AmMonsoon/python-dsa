@@ -1,3 +1,9 @@
+"""
+Time Complexity: O(n * k)
+Space Complexity: O(n * k)
+
+"""
+
 def groupAnagrams(strs):
     words = {}
     key = ()
@@ -10,7 +16,6 @@ def groupAnagrams(strs):
             count[index] += 1
         
        
-        
         key = tuple(count)
         if key in words:
             words[key].append(word)
