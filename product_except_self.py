@@ -1,3 +1,5 @@
+'''
+
 def productExceptSelf(nums):
     left = [1]
     right = [1]
@@ -5,6 +7,7 @@ def productExceptSelf(nums):
 
     for i in range(1, len(nums)):
         left.append(left[i - 1] * nums[i - 1])
+        #[1, 1, 2, 6]
     
     for i in range(len(nums) - 2, -1, -1):
         right.append(right[-1] * nums[i + 1])
@@ -15,8 +18,21 @@ def productExceptSelf(nums):
         answer.append(result)
     return answer
 
-        
+'''
+
+def productExceptSelf(nums):
+    answer = [1] * len(nums)
+    right_product = 1
+
+    for i in range(1,len(nums)):
+        answer[i] = (answer[i - 1] * nums[i - 1])
     
+    for i in range(len(nums) - 1, -1, -1):
+        answer[i] *= right_product
+        right_product *= nums[i]
+    
+    return answer
+
 print(productExceptSelf([1,2,3,4])) # [24,12,8,6]
 print(productExceptSelf([-1,1,0,-3,3])) # [0,0,9,0,0]
 
